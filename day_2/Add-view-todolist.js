@@ -1,6 +1,7 @@
 const { fstat } = require('fs')
 const yargs = require('yargs')
 const fs = require('fs')
+const path = require('path')
 const argv = yargs.argv
 //console.log(argv._)
 
@@ -42,3 +43,4 @@ else if(argv._[0]=="view"){
 
     })
 }
+//
