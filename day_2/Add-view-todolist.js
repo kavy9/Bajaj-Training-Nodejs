@@ -24,9 +24,12 @@ if(argv._[0]=="add"){
             }
         });
         if(!duplicate){myJsonArry.push(newObj)
+            
         fs.writeFile('./data/todo.json',JSON.stringify(myJsonArry),(err)=>{
             if(err)console.log("error while inserting new object")
-        })}
+        })
+        console.log("Added to List !!!")
+            }
         else{
             console.log("already exists")
         }
