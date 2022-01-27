@@ -7,7 +7,7 @@ const argv = yargs.argv
 
 if(argv._[0]=="add"){
     console.log("yessse")
-    const myJsonRaw = fs.readFile('./data/todo.json','utf-8',(err,jsonString)=>{
+    fs.readFile('./data/todo.json','utf-8',(err,jsonString)=>{
         if(err){
             console.log("file reading failed ");
             return;
