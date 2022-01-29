@@ -5,7 +5,7 @@ console.log(buff.toString())   //read
 
 //buffer copy 
 var buffer1 = new Buffer.alloc(10);
-buffer1.write("ABC")
+buffer1.write("ABCEFGHIJKLMNOP")
 var buffer2 = Buffer.alloc(10);
 //buffer2.copy(buffer1)
 console.log(buffer1.toString())
