@@ -8,10 +8,7 @@ signinrouter.post('/signin',async (req,res)=>{
     try{    
     const data = req.body
     //data.usernmae data.password 
-    console.log(data.password)
-    data.password = await bcrypt.hash(data.password,7)
-    const user = User.findOne({username:data.username})
-    console.log(user.password)
+    const user =await User.findOne({username:data.username})
     const authenticate=await bcrypt.compare(data.password,user.password)
     if(authenticate){
         // const token = jwt.sign({username:user.username},"jamesbond")//or we can give other key than jamesbond 
