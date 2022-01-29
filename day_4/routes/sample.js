@@ -1,12 +1,14 @@
 const express = require('express')
 const router=express.Router()
 const User = require('../createUser')
+const bcrypt=require('bcrypt')
 
 router.get('/',(req,res)=>{
     res.send("success")
 })
 router.post('/signup',async (req,res)=>{
     const data = req.body
+    data.password = await bcrypt.hash(data.password,7)
     const user = new User({
         username : data.username,
         password:data.password,
